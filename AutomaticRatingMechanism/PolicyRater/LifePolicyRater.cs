@@ -1,20 +1,19 @@
-﻿using ArdalisRating.Logger;
+﻿using AutomaticRatingMechanism.Logger;
+using Contracts.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArdalisRating.PolicyRater
+namespace AutomaticRatingMechanism.PolicyRater
 {
     class LifePolicyRater : Rater
     {
-        private readonly RatingEngine engine;
         private ConsoleLogger logger;
-        public LifePolicyRater(RatingEngine ratingEngine, ConsoleLogger logger)
+        public LifePolicyRater(ConsoleLogger logger)
         {
-            this.engine = ratingEngine;
             this.logger = logger;
         }
-        public override decimal Rate(Policy policy)
+        public override decimal Rate(IPolicy policy)
         {
             logger.Log("Rating LIFE policy...");
             logger.Log("Validating policy.");

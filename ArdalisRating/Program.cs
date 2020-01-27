@@ -1,6 +1,6 @@
-﻿using ArdalisRating.Inputs;
-using ArdalisRating.Logger;
-using System;
+﻿using System;
+using Contracts;
+using Unity;
 
 namespace ArdalisRating
 {
@@ -8,14 +8,15 @@ namespace ArdalisRating
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Siemens Insurance Rating System Starting...");
-            IContext ratingMechanism = new RatingMechanism();
+            Console.WriteLine("Car Rating System Starting...");
+
+            var container = BootStrap.BootStrapper.OnStartup();
+            var ratingMechanism = container.Resolve<IMechanism>();
             var rating = ratingMechanism.Rate();
-            var engine = new RatingEngine(new ConsoleLogger(), new FilePolicyInput(), new RaterFactory());
-            engine.Rate();
-            if (engine.Rating > 0)
+
+            if (rating > 0)
             {
-                Console.WriteLine($"Rating: {engine.Rating}");
+                Console.WriteLine($"Rating: {rating}");
             }
             else
             {

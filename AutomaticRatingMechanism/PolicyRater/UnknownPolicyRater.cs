@@ -1,9 +1,10 @@
-﻿using ArdalisRating.Logger;
+﻿using AutomaticRatingMechanism.Logger;
+using Contracts.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArdalisRating.PolicyRater
+namespace AutomaticRatingMechanism.PolicyRater
 {
     public class UnknownPolicyRater : Rater
     {
@@ -12,7 +13,7 @@ namespace ArdalisRating.PolicyRater
         {
             this.logger = logger;
         }
-        public override decimal Rate(Policy policy)
+        public override decimal Rate(IPolicy policy)
         {
             logger.Log("Unknown Policy Type");
             return 0;

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Contracts.DataTypes;
+using System;
 
-namespace ArdalisRating
+namespace AutomaticRatingMechanism
 {
-
-    public class Policy
+    public class Policy : IPolicy
     {
         public PolicyType Type { get; set; }
         #region Life Insurance

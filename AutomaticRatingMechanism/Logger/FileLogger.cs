@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArdalisRating.Logger
+namespace AutomaticRatingMechanism.Logger
 {
-    public class ConsoleLogger : ILogger
+    class FileLogger : ILogger
     {
         public void Log(string message)
         {
-            Console.WriteLine(message);
+            //Log in file
         }
     }
 }

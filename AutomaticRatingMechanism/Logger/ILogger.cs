@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ArdalisRating.Logger
+namespace AutomaticRatingMechanism.Logger
 {
     public interface ILogger
     {

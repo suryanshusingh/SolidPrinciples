@@ -1,8 +1,7 @@
 ﻿using System;
 
-namespace ArdalisRating
+namespace Contracts.DataTypes
 {
-
     public enum PolicyType
     {
         Life = 0,
